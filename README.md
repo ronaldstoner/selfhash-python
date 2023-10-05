@@ -11,7 +11,7 @@ The known good hash should then be added to `KNOWN_HASH` string in the script
 
 <img src="https://github.com/ronaldstoner/selfhash-python/blob/main/img/2.png?raw=true" /> 
 
-# Verifying the script on execution[
+# Verifying the script on execution
 
 <img src="https://github.com/ronaldstoner/selfhash-python/blob/main/img/3.png?raw=true" /> 
 
