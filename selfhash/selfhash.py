@@ -36,5 +36,5 @@ class SelfHash:
         elif self.known_hash == self.source_code_hash:
             print("PASS: The program is verified and true.")
         else:
-            print("FAIL: The source code may have been tampered with.")
+            print("FAIL: The source code may have been tampered with or the salt/passphrase is incorrect.")
             exit(1)
