@@ -43,3 +43,13 @@ If you choose to provide a salt/passphrase, it will be used in the calculation o
 If you choose not to provide a salt, you can simply press Enter when prompted and the hash will be calculated based only on your script's code.
 
 Remember - if you use a salt/passphrase you should use the same salt/passphrase every time you run the script, otherwise the hash will be different and the script will fail the verification. This salt/passphrase should be stored securely for future retrieval.
+
+## Screenshots
+### Hashing a script for the first time
+<img src="https://github.com/ronaldstoner/selfhash-python/blob/main/img/1.png?raw=true" />
+
+### Verifying the hash and executing
+<img src="https://github.com/ronaldstoner/selfhash-python/blob/main/img/2.png?raw=true" />
+
+### Preventing execution of a modified script or incorrect salt/passphrase
+<img src="https://github.com/ronaldstoner/selfhash-python/blob/main/img/3.png?raw=true" />
