@@ -32,7 +32,7 @@ hasher.hash(__file__)
 
 When you run a script that uses SelfHash for the first time, it will generate a hash of the script. You then need to insert this hash into the `# Hash: ` comment (leave it commented) of the script's code. This hash is then used for verification in subsequent runs.
 
-If the hash of the script matches the known good hash, the script will print "PASS: The program is verified and true." and continue execution. If the hash does not match, the script will print "FAIL: The source code may have been tampered with." and immediately exit.
+If the hash of the script matches the known good hash, the script will print `PASS: The program is verified and true.` and continue execution. If the hash does not match, the script will print `FAIL: The source code may have been tampered with.` and immediately exit.
 
 ## Salt/Passphrase
 
@@ -48,7 +48,7 @@ Remember - if you use a salt/passphrase you should use the same salt/passphrase 
 
 To ensure the integrity of the SelfHash module itself, we provide a script named `verify-self.py`. This script uses SelfHash to verify the hash of the `selfhash/selfhash.py` file.
 
-If the hash of `selfhash/selfhash.py` matches the known hash at the top of the file, `verify-self.py` will print a message saying, "This should only print if the hash matches and the program is 'verified'".
+If the hash of `selfhash/selfhash.py` matches the known hash at the top of the file, `verify-self.py` will print a message saying, `The hash inside of selfhash/selfhash.py matches and looks correct.`.
 
 To run `verify-self.py`, use the following command:
 
