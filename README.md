@@ -44,6 +44,19 @@ If you choose not to provide a salt, you can simply press Enter when prompted an
 
 Remember - if you use a salt/passphrase you should use the same salt/passphrase every time you run the script, otherwise the hash will be different and the script will fail the verification. This salt/passphrase should be stored securely for future retrieval.
 
+## Verifying the SelfHash Module
+
+To ensure the integrity of the SelfHash module itself, we provide a script named `verify-self.py`. This script uses SelfHash to verify the hash of the `selfhash/selfhash.py` file.
+
+If the hash of `selfhash/selfhash.py` matches the known hash at the top of the file, `verify-self.py` will print a message saying, "This should only print if the hash matches and the program is 'verified'".
+
+To run `verify-self.py`, use the following command:
+
+```bash
+python verify-self.py
+```
+Please remember to run verify-self.py from the root directory of the SelfHash project, and to replace "selfhash/selfhash.py" in verify-self.py with the actual path to the selfhash.py file in your project.
+
 ## Screenshots
 ### Hashing a script for the first time
 <img src="https://github.com/ronaldstoner/selfhash-python/blob/main/img/1.png?raw=true" />

@@ -1,3 +1,5 @@
+# Hash: f92887cb3d4edfb54652de7d9b13ee051638bc449d67ddab01f62613e4d0a1ab
+# No password is set for this hash as it is used to verify the selfhash module code itself and can be checked against the github repo
 import hashlib
 import getpass
 
