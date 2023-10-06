@@ -1,4 +1,5 @@
 import hashlib
+import getpass
 
 # Placeholder for the hash
 # This line is used to compare the sourcecode hash but does not include the commented line to prevent a hash != newhashed_code update problem
@@ -14,6 +15,10 @@ with open(__file__, 'r') as source_file:
 # We'll calculate the hash without the hash line
 hash_line_index = [i for i, line in enumerate(file_data) if line.strip().startswith("# Hash:")][0]
 file_data_hash = ''.join([line for i, line in enumerate(file_data) if i != hash_line_index])
+
+# Ask the user for a salt
+salt = getpass.getpass(prompt='Please provide a salt for the hash calculation. If you do not want to provide one, just press Enter: ')
+file_data_hash += salt
 
 # Calculate the hash of the source code
 source_code_hash = hashlib.sha256(file_data_hash.encode()).hexdigest()
