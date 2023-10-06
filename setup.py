@@ -5,8 +5,9 @@ setup(
     version='0.1',
     packages=find_packages(),
     author='Ron Stoner',
-    author_email='stoner.com',
-    description='A package to self hash and verify a python script.',
+    author_email='ron@stoner.com',
+    description='A package to self hash and verify a python script',
+    long_description_content_type='text/markdown',
     long_description=open('README.md').read(),
     url='https://github.com/ronaldstoner/selfhash-python',
     classifiers=[
