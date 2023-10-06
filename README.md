@@ -46,14 +46,14 @@ Remember - if you use a salt/passphrase you should use the same salt/passphrase 
 
 ## Verifying The SelfHash Module
 
-To ensure the integrity of the SelfHash module itself, we provide a script named `verify-self.py`. This script uses SelfHash to verify the hash of the `selfhash/selfhash.py` file.
+To ensure the integrity of the SelfHash module itself, we provide a script named `verify_self.py`. This script uses SelfHash to verify the hash of the `selfhash/selfhash.py` file.
 
-If the hash of `selfhash/selfhash.py` matches the known hash at the top of the file, `verify-self.py` will print a message saying, `The hash inside of selfhash/selfhash.py matches and looks correct.`
+If the hash of `selfhash/selfhash.py` matches the known hash at the top of the file, `verify_self.py` will print a message saying, `The hash inside of selfhash/selfhash.py matches and looks correct.`
 
-To run `verify-self.py`, use the following command without any salt (no passphrase is set):
+To run `verify_self.py`, use the following command without any salt (no passphrase is set):
 
 ```bash
-python verify-self.py
+python verify_self.py
 ```
 
 ## Screenshots
