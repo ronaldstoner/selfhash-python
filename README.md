@@ -12,7 +12,7 @@ cd selfhash-python
 pip install .
 ```
 
-## Integrating SelfHash into Your Scripts
+## Integrating SelfHash Into Your Scripts
 
 To use SelfHash in your scripts, you need to follow two steps:
 
@@ -36,19 +36,19 @@ If the hash of the script matches the known good hash, the script will print `PA
 
 ## Salt/Passphrase
 
-When you run the `hash` method, it will prompt you to enter a salt for the hash calculation. This is an optional step that you can use to add an extra layer of security to your hash. 
+When you run the `hash` method, it will prompt you to enter a salt/passphrase for the hash calculation. This is an optional step that you can use to add an extra layer of security to your hash. 
 
 If you choose to provide a salt/passphrase, it will be used in the calculation of the hash of your script. This means that even if someone else has the exact same script code, they won't be able to generate the same hash unless they also know your salt/passphrase. 
 
-If you choose not to provide a salt, you can simply press Enter when prompted and the hash will be calculated based only on your script's code.
+If you choose not to provide a salt/passphrase, you can simply press Enter when prompted and the hash will be calculated based only on your script's code.
 
 Remember - if you use a salt/passphrase you should use the same salt/passphrase every time you run the script, otherwise the hash will be different and the script will fail the verification. This salt/passphrase should be stored securely for future retrieval.
 
-## Verifying the SelfHash Module
+## Verifying The SelfHash Module
 
 To ensure the integrity of the SelfHash module itself, we provide a script named `verify-self.py`. This script uses SelfHash to verify the hash of the `selfhash/selfhash.py` file.
 
-If the hash of `selfhash/selfhash.py` matches the known hash at the top of the file, `verify-self.py` will print a message saying, `The hash inside of selfhash/selfhash.py matches and looks correct.`.
+If the hash of `selfhash/selfhash.py` matches the known hash at the top of the file, `verify-self.py` will print a message saying, `The hash inside of selfhash/selfhash.py matches and looks correct.`
 
 To run `verify-self.py`, use the following command without any salt (no passphrase is set):
 
@@ -57,11 +57,11 @@ python verify-self.py
 ```
 
 ## Screenshots
-### Hashing a script for the first time
+### Hashing A Script For The First Time
 <img src="https://github.com/ronaldstoner/selfhash-python/blob/main/img/1.png?raw=true" />
 
-### Verifying the hash and executing
+### Verifying The Hash And Executing
 <img src="https://github.com/ronaldstoner/selfhash-python/blob/main/img/2.png?raw=true" />
 
-### Preventing execution of a modified script or incorrect salt/passphrase
+### Preventing Execution Of A Modified Script Or Incorrect Salt
 <img src="https://github.com/ronaldstoner/selfhash-python/blob/main/img/3.png?raw=true" />
