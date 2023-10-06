@@ -50,12 +50,11 @@ To ensure the integrity of the SelfHash module itself, we provide a script named
 
 If the hash of `selfhash/selfhash.py` matches the known hash at the top of the file, `verify-self.py` will print a message saying, `The hash inside of selfhash/selfhash.py matches and looks correct.`.
 
-To run `verify-self.py`, use the following command:
+To run `verify-self.py`, use the following command without any salt (no passphrase is set):
 
 ```bash
 python verify-self.py
 ```
-Please remember to run verify-self.py from the root directory of the SelfHash project, and to replace "selfhash/selfhash.py" in verify-self.py with the actual path to the selfhash.py file in your project.
 
 ## Screenshots
 ### Hashing a script for the first time
