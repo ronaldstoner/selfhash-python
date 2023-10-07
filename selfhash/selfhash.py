@@ -43,7 +43,7 @@ class SelfHash:
             print("Hash of the source code:\n", self.source_code_hash)
             sys.exit()
         elif self.known_hash == self.source_code_hash:
-            print("PASS: The program is verified and true.")
+            print("\033[92mPASS\033[0m: The program is verified and true.")
         else:
-            print("FAIL: The source code may have been tampered with or the salt/passphrase is incorrect.")
+            print("\033[91mFAIL\033[0m: The source code may have been tampered with or the salt/passphrase is incorrect.")
             sys.exit()
