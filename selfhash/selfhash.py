@@ -1,6 +1,6 @@
 """SelfHash - Self hashing and verification python script"""
 
-# Hash: 598ec3197c9f5a1702413979107a5f15fcaed14ecb97943394ba197eae5e072b
+# Hash: 07fcdccbf782d4b94cd9b3e52d2000a05157feb4804154eb1a16db77f2f209d9
 # No password is set for this hash as it is used to verify the selfhash module code itself and can be checked against the github repo
 
 import hashlib
@@ -8,13 +8,16 @@ import getpass
 import sys
 
 class SelfHash:
+    """Class for SelfHash"""
     def __init__(self):
+        """Init function"""
         self.file_data_hash = None
         self.source_code_hash = None
         self.known_hash = None
 
     def hash(self, file):
-        with open(file, 'r') as source_file:
+        """Function that hashes the source code"""
+        with open(file, 'r', encoding="utf-8") as source_file:
             file_data = source_file.readlines()
 
         try:
@@ -23,7 +26,7 @@ class SelfHash:
             print("The '# Hash:' line was not found in the file.")
             print("Please add '# Hash: INSERT_HASH_HERE' at the top of your python file and try again.")
             sys.exit()
-        
+
         self.file_data_hash = ''.join([line for i, line in enumerate(file_data) if i != hash_line_index])
 
         salt = getpass.getpass(prompt='Please provide a salt for the hash calculation. If you do not want to provide one, just press Enter: ')
