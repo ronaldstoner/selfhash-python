@@ -1,5 +1,8 @@
-"""Module providing a function printing python version."""
-# Hash: INSERT_HASH_HERE
+#!/usr/bin/python
+# Hash: INSERT_HASH_HERE 
+
+"""Test file to check hash generation and verification"""
+
 import selfhash
 
 # Load selfhash into a hasher and perform the verification check

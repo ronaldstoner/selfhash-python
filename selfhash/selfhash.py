@@ -1,7 +1,9 @@
-"""SelfHash - Self hashing and verification python script"""
+#!/usr/bin/python
+# Hash: 7f666d94ce9cb333e6e11db5be7c90afd24fd0d5e36f2a45beb0dfab56c60e0d
 
-# Hash: 07fcdccbf782d4b94cd9b3e52d2000a05157feb4804154eb1a16db77f2f209d9
 # No password is set for this hash as it is used to verify the selfhash module code itself and can be checked against the github repo
+
+"""SelfHash - Self hashing and verification python script"""
 
 import hashlib
 import getpass

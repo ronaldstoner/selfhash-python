@@ -1,4 +1,8 @@
+#!/usr/bin/python
+# Hash: fa7a281d063b383fbf7e91d8fe8eb91d820b08779d0658035735271bbf11da79
+
 """Script to verify the selfhash/selfhash.py module hash"""
+
 import selfhash
 
 # Load selfhash into a hasher and perform the verification check
