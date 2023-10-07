@@ -7,9 +7,7 @@
 
 import hashlib
 import getpass
-import inspect
 import sys
-
 
 class SelfHash:
     """Class for SelfHash"""
@@ -49,13 +47,3 @@ class SelfHash:
         else:
             print("\033[91mFAIL\033[0m: The source code may have been tampered with or the salt/passphrase is incorrect.")
             sys.exit()
-
-
-def _get_caller_file():
-    stack = inspect.stack()
-    caller_frame = stack[-1]
-    caller_file = caller_frame.filename
-    return caller_file
-
-# Automatically hash the caller
-SelfHash().hash(_get_caller_file())
