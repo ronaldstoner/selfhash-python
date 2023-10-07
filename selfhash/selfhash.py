@@ -1,7 +1,11 @@
-# Hash: 92d824dcb091d6704af574558a77f5341d936496e8e68a717294311c0e1e358a
+"""SelfHash - Self hashing and verification python script"""
+
+# Hash: 598ec3197c9f5a1702413979107a5f15fcaed14ecb97943394ba197eae5e072b
 # No password is set for this hash as it is used to verify the selfhash module code itself and can be checked against the github repo
+
 import hashlib
 import getpass
+import sys
 
 class SelfHash:
     def __init__(self):
@@ -12,13 +16,13 @@ class SelfHash:
     def hash(self, file):
         with open(file, 'r') as source_file:
             file_data = source_file.readlines()
-        
+
         try:
             hash_line_index = [i for i, line in enumerate(file_data) if line.strip().startswith("# Hash:")][0]
         except IndexError:
             print("The '# Hash:' line was not found in the file.")
             print("Please add '# Hash: INSERT_HASH_HERE' at the top of your python file and try again.")
-            exit(1)
+            sys.exit()
         
         self.file_data_hash = ''.join([line for i, line in enumerate(file_data) if i != hash_line_index])
 
@@ -32,9 +36,9 @@ class SelfHash:
         if self.known_hash == "INSERT_HASH_HERE":
             print("The hash of the source code is not set yet.\nPlease run the script once and then replace INSERT_HASH_HERE with the hash.")
             print("Hash of the source code:\n", self.source_code_hash)
-            exit(1)
+            sys.exit()
         elif self.known_hash == self.source_code_hash:
             print("PASS: The program is verified and true.")
         else:
             print("FAIL: The source code may have been tampered with or the salt/passphrase is incorrect.")
-            exit(1)
+            sys.exit()

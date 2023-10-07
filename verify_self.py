@@ -1,3 +1,4 @@
+"""Script to verify the selfhash/selfhash.py module hash"""
 import selfhash
 
 # Load selfhash into a hasher and perform the verification check

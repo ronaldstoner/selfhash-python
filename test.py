@@ -1,3 +1,4 @@
+"""Module providing a function printing python version."""
 # Hash: INSERT_HASH_HERE
 import selfhash
 
@@ -7,4 +8,3 @@ hasher.hash(__file__)
 
 # This should only run if the hash matches and the program is 'verified'
 print("This should only print if the hash matches and the program is 'verified'")
-
