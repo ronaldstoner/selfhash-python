@@ -3,4 +3,17 @@
 
 """SelfHash __init__.py"""
 
+import inspect
+
 from .selfhash import SelfHash
+
+
+def _get_caller_file():
+    stack = inspect.stack()
+    caller_frame = stack[-1]
+    caller_file = caller_frame.filename
+    return caller_file
+
+
+# Automatically hash the caller
+SelfHash().hash(_get_caller_file())
