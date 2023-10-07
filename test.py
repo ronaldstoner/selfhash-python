@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Hash: INSERT_HASH_HERE 
+# Hash: INSERT_HASH_HERE
 
 """Test file to check hash generation and verification"""
 
