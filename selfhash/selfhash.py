@@ -27,7 +27,7 @@ class SelfHash:
         except IndexError:
             print("The '# Hash:' line was not found in the file.")
             print("Please add '# Hash: INSERT_HASH_HERE' at \nthe top of your python file and try again.")
-            sys.exit()
+            sys.exit(1)
 
         self.file_data_hash = ''.join([line for i, line in enumerate(file_data) if i != hash_line_index])
 
@@ -38,7 +38,7 @@ class SelfHash:
 
         self.known_hash = file_data[hash_line_index].strip().split(' ')[-1]
 
-        if self.known_hash == "INSERT_HASH_HERE":
+        if self.known_hash in ("Hash:", "INSERT_HASH_HERE"):
             print("The hash of the source code is not set yet.\nPlease run the script once and then replace INSERT_HASH_HERE with the hash.")
             print("Hash of the source code:\n", self.source_code_hash)
             sys.exit()
