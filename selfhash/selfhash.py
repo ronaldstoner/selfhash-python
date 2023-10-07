@@ -27,7 +27,7 @@ class SelfHash:
         except IndexError:
             print("The '# Hash:' line was not found in the file.")
             print("Please add '# Hash: INSERT_HASH_HERE' at \nthe top of your python file and try again.")
-            sys.exit()
+            sys.exit(1)
 
         self.file_data_hash = ''.join([line for i, line in enumerate(file_data) if i != hash_line_index])
 
@@ -46,4 +46,4 @@ class SelfHash:
             print("PASS: The program is verified and true.")
         else:
             print("FAIL: The source code may have been tampered with or the salt/passphrase is incorrect.")
-            sys.exit()
+            sys.exit(1)
