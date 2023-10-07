@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Hash: 2f2f37bb2c52daf7cec82c31467891e62085eeabd786a466a20295cc788e7190
+# Hash: c3cc1ea03ccae7a8a6f33ba3c53b6d2a143311e46a9b16e1b511b543ed27f885
 
 """Script to verify all python files in a directory recursively"""
 

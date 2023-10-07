@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Hash: 7f666d94ce9cb333e6e11db5be7c90afd24fd0d5e36f2a45beb0dfab56c60e0d
+# Hash: 60713eb2084ed9cacd2d01d1934cb72f80e39945cc7965a8dcbd8218c7562d75
 
 # No password is set for this hash as it is used to verify the selfhash module code itself and can be checked against the github repo
 
@@ -26,12 +26,12 @@ class SelfHash:
             hash_line_index = [i for i, line in enumerate(file_data) if line.strip().startswith("# Hash:")][0]
         except IndexError:
             print("The '# Hash:' line was not found in the file.")
-            print("Please add '# Hash: INSERT_HASH_HERE' at the top of your python file and try again.")
+            print("Please add '# Hash: INSERT_HASH_HERE' at \nthe top of your python file and try again.")
             sys.exit()
 
         self.file_data_hash = ''.join([line for i, line in enumerate(file_data) if i != hash_line_index])
 
-        salt = getpass.getpass(prompt='Please provide a salt for the hash calculation. If you do not want to provide one, just press Enter: ')
+        salt = getpass.getpass(prompt='Please provide a salt for the hash calculation.\nIf you do not want to provide one, just press Enter: ')
         self.file_data_hash += salt
 
         self.source_code_hash = hashlib.sha256(self.file_data_hash.encode()).hexdigest()
