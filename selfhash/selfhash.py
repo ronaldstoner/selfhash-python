@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Hash: 60713eb2084ed9cacd2d01d1934cb72f80e39945cc7965a8dcbd8218c7562d75
+# Hash: 84e58a4a1dbd6cdae11fd89f7a718154ab7a1e140dc2860c4428aa4d87789010
 
 # No password is set for this hash as it is used to verify the selfhash module code itself and can be checked against the github repo
 
