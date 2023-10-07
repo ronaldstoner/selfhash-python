@@ -65,3 +65,6 @@ python verify_self.py
 
 ### Preventing Execution Of A Modified Script Or Incorrect Salt
 <img src="https://github.com/ronaldstoner/selfhash-python/blob/main/img/3.png?raw=true" />
+
+### Verifying SelfHash module itself (no seed/passphrase)
+<img src="https://github.com/ronaldstoner/selfhash-python/blob/main/img/4.png?raw=true" />
