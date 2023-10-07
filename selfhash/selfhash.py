@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Hash: 84e58a4a1dbd6cdae11fd89f7a718154ab7a1e140dc2860c4428aa4d87789010
+# Hash: 141560b7ed59f8871c2f2c0e09610031e37a753c32cf5311a8a9700b9813f94b
 
 # No password is set for this hash as it is used to verify the selfhash module code itself and can be checked against the github repo
 
@@ -31,7 +31,7 @@ class SelfHash:
 
         self.file_data_hash = ''.join([line for i, line in enumerate(file_data) if i != hash_line_index])
 
-        salt = getpass.getpass(prompt='Please provide a salt for the hash calculation.\nIf you do not want to provide one, just press Enter: ')
+        salt = getpass.getpass(prompt='This python script is protected by SelfHash.\nPlease provide a salt for the hash calculation.\nIf you do not want to provide one, just press Enter: ')
         self.file_data_hash += salt
 
         self.source_code_hash = hashlib.sha256(self.file_data_hash.encode()).hexdigest()
