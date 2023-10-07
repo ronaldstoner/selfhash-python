@@ -38,7 +38,7 @@ class SelfHash:
 
         self.known_hash = file_data[hash_line_index].strip().split(' ')[-1]
 
-        if self.known_hash == "INSERT_HASH_HERE":
+        if self.known_hash in ("Hash:", "INSERT_HASH_HERE"):
             print("The hash of the source code is not set yet.\nPlease run the script once and then replace INSERT_HASH_HERE with the hash.")
             print("Hash of the source code:\n", self.source_code_hash)
             sys.exit()
