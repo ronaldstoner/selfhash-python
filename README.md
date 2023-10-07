@@ -26,7 +26,7 @@ Here's an example:
 # Hash: INSERT_HASH_HERE
 import selfhash
 
-hasher = selfhash.SelfHash()
+hasher = selfhash.SelfHash(bypass_salt=False) # Always prompt for salt when set to False
 hasher.hash(__file__)
 ```
 
@@ -43,6 +43,26 @@ If you choose to provide a salt/passphrase, it will be used in the calculation o
 If you choose not to provide a salt/passphrase, you can simply press Enter when prompted and the hash will be calculated based only on your script's code.
 
 Remember - if you use a salt/passphrase you should use the same salt/passphrase every time you run the script, otherwise the hash will be different and the script will fail the verification. This salt/passphrase should be stored securely for future retrieval.
+
+## Bypass Salt/Passphrase
+
+In some cases, you might want to bypass the salt/passphrase prompt. You can do this by setting the bypass_salt parameter to True when you create an instance of the SelfHash class.
+
+Here's an example:
+
+```python
+
+# Hash: INSERT_HASH_HERE
+import selfhash
+
+hasher = selfhash.SelfHash(bypass_salt=True)
+hasher.hash(__file__)
+```
+
+When you set `bypass_salt` to `True`, the hash method will not prompt you for a salt/passphrase and will calculate the hash based only on your script's code. This can be useful in automated environments where user input is not possible.
+
+Note: If you bypass the salt/passphrase, you won't be able to use a salt/passphrase for the hash calculation. If you've previously run the hash method with a salt/passphrase, the hash will be different when you bypass the salt/passphrase, and the script will fail the verification. Be sure to use the same bypass_salt setting every time you run the script.
+
 
 ## Verifying The SelfHash Module
 

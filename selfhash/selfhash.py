@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Hash: 141560b7ed59f8871c2f2c0e09610031e37a753c32cf5311a8a9700b9813f94b
+# Hash: 09063288aa0912b98bba70932e28b7b9f592478d9225317d8d67c281689926c9
 
 # No password is set for this hash as it is used to verify the selfhash module code itself and can be checked against the github repo
 
@@ -11,11 +11,12 @@ import sys
 
 class SelfHash:
     """Class for SelfHash"""
-    def __init__(self):
+    def __init__(self, bypass_salt=False):
         """Init function"""
         self.file_data_hash = None
         self.source_code_hash = None
         self.known_hash = None
+        self.bypass_salt = bypass_salt
 
     def hash(self, file):
         """Function that hashes the source code"""
@@ -31,8 +32,9 @@ class SelfHash:
 
         self.file_data_hash = ''.join([line for i, line in enumerate(file_data) if i != hash_line_index])
 
-        salt = getpass.getpass(prompt='This python script is protected by SelfHash.\nPlease provide a salt for the hash calculation.\nIf you do not want to provide one, just press Enter: ')
-        self.file_data_hash += salt
+        if not self.bypass_salt:
+            salt = getpass.getpass(prompt='This python script is protected by SelfHash.\nPlease provide a salt for the hash calculation.\nIf you do not want to provide one, just press Enter: ')
+            self.file_data_hash += salt
 
         self.source_code_hash = hashlib.sha256(self.file_data_hash.encode()).hexdigest()
 

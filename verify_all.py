@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Hash: ecb0e433ccaddc83f49f247e1e38ef19b10c0d73e5def96a2be573913ce57d80
+# Hash: ff09080b23d744ebcc446a3fdce8dc0da5ae1b127517a4d29c3be46219a012c4
 
 """Script to verify all python files in a directory recursively"""
 
@@ -13,7 +13,7 @@ def hash_and_verify_files(directory):
         print(f"Processing {filename}...")
 
         # Instantiate a new selfhash class for each file
-        hasher = selfhash.SelfHash()
+        hasher = selfhash.SelfHash(bypass_salt=True)
         hasher.hash(filename)
 
         if hasher.known_hash == "INSERT_HASH_HERE":
