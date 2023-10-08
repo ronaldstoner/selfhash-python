@@ -3,8 +3,13 @@
 SelfHash is a Python package that allows you to hash your Python scripts and verify them. It's designed to provide an additional layer of security by ensuring that your script's code has not been tampered with. If the hash does not match the known good hash then the script will immediately exit and prevent further execution.
 
 ## Installation
+```bash
+pip install selfhash
+```
 
-You can install SelfHash from source with:
+## Installation From Source
+
+You can also choose to install SelfHash from source with:
 
 ```bash
 git clone https://github.com/ronaldstoner/selfhash-python.git
@@ -88,3 +93,6 @@ python verify_self.py
 
 ### Verifying SelfHash module itself (no seed/passphrase)
 <img src="https://github.com/ronaldstoner/selfhash-python/blob/main/img/4.png?raw=true" />
+
+## Note
+It's important to note that this script is only a part of a comprehensive security strategy and should not be solely relied upon to ensure the integrity and security of your code.
