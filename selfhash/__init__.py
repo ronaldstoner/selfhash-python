@@ -16,4 +16,6 @@ def _get_caller_file():
 
 
 # Automatically hash the caller
-SelfHash().hash(_get_caller_file())
+_caller_file = _get_caller_file()
+if _caller_file != '<stdin>':
+    SelfHash().hash(_get_caller_file())
