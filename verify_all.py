@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Hash: 8a26874511080270877d2b3e5f94191fd9e5fd2dad5a191065906c8e66faa781
+# Hash: 4d8077bf0fa508b5211a94521fdf436dc1316d3da6ea8d2570470b25ed2330db
 # Author: Ron Stoner
 # Github: ronaldstoner
 # Website: stoner.com
@@ -11,21 +11,21 @@ import selfhash
 
 def hash_and_verify_files(directory):
     """Hash and verify all .py files in the given directory recursively."""
-    
+
     # Find all Python files in the directory and its subdirectories
     py_files = glob.iglob(directory + '**/*.py', recursive=True)
     total_files = sum(1 for _ in py_files)  # Count the total number of .py files
     print(f"\nTotal Python files found: {total_files}")
-    
+
     # Re-run glob to get the file list again after counting
     py_files = glob.iglob(directory + '**/*.py', recursive=True)
 
     for filename in py_files:
         print(f"\nProcessing {filename}...")
-        
+
         # Instantiate the SelfHash class for each file
         hasher = selfhash.SelfHash(bypass_salt=True)
-        
+
         # Perform the hash verification for each file
         hasher.hash(filename)
 

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Hash: f67323982e945bb945f9fc54ed0b7a8c0d1831b1475e6e89d3e270f9dbffd1dc
+# Hash: 7133c3ec57f1dbdd2b35a409abebd34ea0736fde377056706b32bf955ae7d313
 # Author: Ron Stoner
 # Github: ronaldstoner
 # Website: stoner.com
@@ -15,8 +15,8 @@ import sys
 
 
 class SelfHash:
+
     """Class to handle the self-hashing and verification of Python source code."""
-    
     def __init__(self, bypass_salt=False):
         """
         Initializes the SelfHash object.
@@ -67,7 +67,7 @@ class SelfHash:
 
         # Calculate the SHA-256 hash of the source code (with salt if provided)
         self.source_code_hash = hashlib.sha256(self.file_data_hash.encode()).hexdigest()
- 
+
         # Compare the known hash to the calculated hash
         self.known_hash = file_data[hash_line_index].strip().split(' ')[-1]
         self.known_hash = self.known_hash.strip()  # Clean up extra spaces
@@ -85,7 +85,7 @@ class SelfHash:
         else:
             print("\033[91mFAIL\033[0m: The source code may have been tampered with or the salt/passphrase is incorrect.")
             fail = True
-            
+
         # Exit with error if there was any failure
         if fail:
             sys.exit(1)
